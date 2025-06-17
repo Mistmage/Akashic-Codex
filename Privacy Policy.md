@@ -5,12 +5,12 @@ Akashic-Codex (“the Extension”) respects your privacy. This Privacy Policy e
 # Data Collection & Storage
 The Extension stores website links, titles, and dates only locally on your device.
 
-No data is transmitted or stored externally unless explicitly exported or sent via API by the user.
+No data is transmitted or stored externally unless explicitly exported or sent via REST API by the user.
 
 # Data Usage
 Stored data is available solely for personal reference and management within the Extension.
 
-Users can download stored data or send it via API based on their preferences.
+Users can download stored data or send it via REST API based on their preferences.
 
 The Extension does not process or analyze user data beyond storage functionality.
 
