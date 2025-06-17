@@ -1,0 +1,78 @@
+/* popup.css */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+  width: 300px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+ul#tab-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+ul#tab-list li {
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul#tab-list li:last-child {
+  border-bottom: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 6px;
+  font-size: 14px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #005ea2;
+}
+
+#tab-list a {
+  color: #0078d4;
+  text-decoration: none;
+}
+
+#tab-list a:hover {
+  text-decoration: underline;
+}

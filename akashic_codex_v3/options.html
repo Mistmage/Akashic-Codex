@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Akashic Codex Settings</title>
+  <link rel="icon" type="image/png" href="icon32.png">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>Settings</h1>
+  <form>
+    <fieldset>
+      <legend>Global</legend>
+      <label><input type="checkbox" id="refuse-existing-tabs"> Refuse existing tabs (Lazy)</label><br>
+      <label><input type="checkbox" id="refuse-existing-tabs-group"> Refuse existing tabs (Global)</label><br>
+      <label><input type="checkbox" id="close-on-save-one"> Close tab on "Save"</label><br>
+      <label><input type="checkbox" id="close-on-save-all"> Close tab on "Save All"</label><br>
+      <label><input type="checkbox" id="disable-saveall-confirm"> Disable confirmation for Save All</label><br>
+      <label>Popup shows last <input type="number" id="popup-tab-count" min="1" max="50"> tabs</label><br>
+      <label>Save mode:
+        <select id="global-save-mode">
+          <option value="append-new">Append New</option>
+          <option value="append-all">Append All</option>
+          <option value="overwrite">Overwrite</option>
+          <option value="append-recent">Append Recent</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Obsidian Integration</legend>
+      <label><input type="checkbox" id="obsidian-enabled"> Enable Obsidian Integration</label><br>
+      <label>API Key: <input type="text" id="obsidian-api-key"></label><br>
+      <label>API Path: <input type="text" id="obsidian-api-path"></label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Links</legend>
+      <label><input type="checkbox" id="display-raw-links"> Display raw links</label><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Drag & Drop</legend>
+      <label><input type="checkbox" id="disable-drag-drop"> Disable drag & drop</label><br>
+      <label><input type="checkbox" id="shift-drag-drop"> Enable drag & drop only with Shift</label><br>
+    </fieldset>
+
+    <button type="button" id="save-settings">Save Settings</button>
+    <a href="fullview.html" class="button">Full View (Akashic Codex)</a>
+
+
+</form>
+
+<div class="section">
+  <h2>
+    Rulebook
+    <button id="toggle-rulebook">Show/Hide</button>
+
+  </h2>
+ <fieldset>
+      <legend>Supported export template variables</legend>
+      <ul style="margin:0 0 0 1.5em;padding:0;font-size:14px;line-height:1.7;">
+        <li><b>${title}</b> or <b>{{tab.title}}</b> — The tab's title</li>
+        <li><b>${url}</b> or <b>{{tab.url}}</b> — The tab's URL</li>
+        <li><b>{{group.name}}</b> — The name of the group being exported</li>
+        <li><b>${timestamp}</b> or <b>{{timestamp}}</b> — The current export timestamp (ISO string)</li>
+        <li><b>{{Counter}}</b> — A counter that increases by one for each tab (starting at 1)</li>
+      </ul>
+      <div style="margin-top:0.7em;font-size:13px;color:#1976d2;">
+        <b>Special block variables</b> (inside <code>{{#special}}...{{/special}}</code>):
+        <ul style="margin:0 0 0 1.5em;padding:0;">
+          <li><b>{{tabCount}}</b> — The number of tabs in the group</li>
+          <li><b>{{group.name}}</b> — The group name</li>
+          <li><b>{{timestamp}}</b> — The export timestamp</li>
+        </ul>
+      </div>
+      <div style="margin-top:0.7em;font-size:13px;color:#555;">
+        <b>Example:</b><br>
+        <code>* {{Counter}}. [[{{tab.title}}]] - {{tab.url}}</code>
+      </div>
+    </fieldset>
+
+
+  <div id="rulebook-container" class="collapsible-content" style="display: none;">
+    <div id="rulebook-groups"></div>
+    <button id="add-rulebook-group">➕ Add New Group</button>
+  </div>
+</div>
+
+<div class="section" style="margin-top:2em;">
+      <h2>Backup & Restore</h2>
+      <p style="color:#b00;font-size:13px;">Importing will overwrite all your current settings and rulebook groups.</p>
+      <button type="button" id="export-settings">Export Settings</button>
+      <button type="button" id="import-settings">Import Settings</button>
+      <input type="file" id="import-settings-file" accept="application/json" style="display:none" />
+    </div>
+
+  <script type="module" src="options.js"></script>
+
+</body>
+
+</html>

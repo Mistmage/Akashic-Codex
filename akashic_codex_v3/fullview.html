@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Akashic Codex - Full View</title>
+  <link rel="icon" type="image/png" href="icon32.png">
+  <link rel="stylesheet" href="fullview.css">
+</head>
+<body>
+  <header>
+    <h1>Akashic Codex - Full Tab View</h1>
+    <div id="tab-counts" style="margin: 0.5em 0 0.5em 0; font-size: 1.1em;"></div>
+    <div class="header-buttons">
+      <button id="export-all" class="button">Export All</button>
+      <button id="save-all-alt" class="button" style="background-color:#43a047;">Save All Tabs</button>
+      <button id="restore-all" class="button">Restore All</button>
+      <button id="restore-delete-all" class="button">Restore & Delete All</button>
+      <button id="remove-duplicates-all" class="button">Remove Duplicates</button>
+      <a href="options.html" class="button">Settings</a>
+    </div>
+  </header>
+
+  <main id="group-container">
+    <!-- Groups will be dynamically inserted here -->
+  </main>
+
+  <section id="recently-removed-section" style="margin:2em 0 1em 0;">
+    <details>
+      <summary style="font-size:1.1em;cursor:pointer;">Recently Removed Tabs (last 10)</summary>
+      <ul id="recently-removed-list" style="margin-top:0.5em;"></ul>
+    </details>
+  </section>
+
+  <script type="module" src="fullview.js"></script>
+</body>
+</html>
